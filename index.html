@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bubbu, Read This 😌</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff3366, #ff8fab);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .box {
+      background: rgba(0,0,0,0.25);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      max-width: 90%;
+      z-index: 2;
+    }
+
+    h1 { font-size: 30px; }
+    h2 { font-size: 24px; margin-bottom: 20px; }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    button {
+      padding: 15px 35px;
+      font-size: 20px;
+      border: none;
+      border-radius: 30px;
+      background-color: #fff;
+      color: #ff3366;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      transition: 0.2s;
+    }
+
+    .small {
+      font-size: 13px;
+      margin-top: 15px;
+      opacity: 0.9;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      color: rgba(255,255,255,0.6);
+      font-size: 20px;
+      animation: float 6s infinite ease-in;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music (optional but lethal 😈)
+       You can replace the link with any romantic mp3 -->
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="box">
+    <h1>Hey Bubbu 😌❤️</h1>
+    <h2>Will you be my Valentine?</h2>
+
+    <p>
+      This is our <b>first Valentine</b> 💘  
+      and let’s not waste time pretending you have options.
+      <br><br>
+      You opened this link.<br>
+      That was the decision.
+    </p>
+
+    <button onclick="yesClicked()">YES, I’M YOURS 💍</button>
+
+    <div class="small">
+      Screenshot this 📸<br>
+      Then come tell me “YES” on WhatsApp 😏
+    </div>
+  </div>
+
+  <script>
+    function yesClicked() {
+      alert("Smart choice Bubbu 😌❤️\nYou’re officially my Valentine now.\nGo WhatsApp me RIGHT NOW 💘");
+      window.location.href = "https://wa.me/?text=YES%20I%20am%20your%20Valentine%20😌❤️";
+    }
+
+    // create floating hearts
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }, 300);
+  </script>
+
+</body>
+</html>
